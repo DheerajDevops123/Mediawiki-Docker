@@ -1,4 +1,4 @@
-FROM mariadb
+FROM mariadb:latest
 
 ADD ./config.sql /docker-entrypoint-initdb/config.sql
 

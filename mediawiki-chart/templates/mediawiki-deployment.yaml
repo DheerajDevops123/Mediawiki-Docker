@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: mediawiki
-  name: mediawiki
+    service: {{ .Values.serviceName }}
+  name: mediawiki-deployment
 spec:
   replicas: 1
   selector:
@@ -16,7 +16,7 @@ spec:
         service: mediawiki
     spec:
       containers:
-      - image: supreetraut/mediawiki-1.34
+      - image: dheerajdevops123/mediawiki-1.42.1
         imagePullPolicy: Always
         name: mediawiki
         ports:
